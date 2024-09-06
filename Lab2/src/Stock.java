@@ -22,10 +22,10 @@ public class Stock {
         double sellingComm = stockSale  * BROKER_COM_RATE;
 
         // Calculate the total received after selling stock and paying broker fees
-        double ammountReceived = stockSale - sellingComm;
+        double amountReceived = stockSale - sellingComm;
 
         // Calculate amount of profit or loss
-        double profitOrLoss = ammountReceived - amountPaid;
+        double profitOrLoss = amountReceived - amountPaid;
 
         // Results to be printed
         System.out.printf("Joe paid $%,.2f for the stock. \n", stockPurchase);
@@ -33,7 +33,7 @@ public class Stock {
         System.out.printf("So, Joe paid a total of $%,.2f\n", amountPaid);
         System.out.printf("Joe sold the stock for $%,.2f\n", stockSale);
         System.out.printf("Joe paid his broker a commission of $%,.2f on" + " the sale. \n", sellingComm);
-        System.out.printf("So, Joe received a total of $%,.2f\n", ammountReceived);
+        System.out.printf("So, Joe received a total of $%,.2f\n", amountReceived);
         System.out.printf("\nJoe's profit or loss: $%,.2f\n", profitOrLoss);
     }
 
