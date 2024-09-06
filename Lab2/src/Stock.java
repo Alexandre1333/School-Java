@@ -10,5 +10,32 @@ public class Stock {
         double stockPurchase = NUM_SHARES * PURCHASE_PRICE;
 
         // Brokers commission on the purchase
+        double purchaseComm = stockPurchase * BROKER_COM_RATE;
+
+        // Calculate total paid for stock, plus, broker commission
+        double amountPaid = stockPurchase + purchaseComm;
+
+        // Calculate amount sold
+        double stockSale = NUM_SHARES * SELLING_PRICE;
+
+        // Calculate broker commission on sale
+        double sellingComm = stockSale  * BROKER_COM_RATE;
+
+        // Calculate the total received after selling stock and paying broker fees
+        double ammountReceived = stockSale - sellingComm;
+
+        // Calculate amount of profit or loss
+        double profitOrLoss = ammountReceived - amountPaid;
+
+        // Results to be printed
+        System.out.printf("Joe paid $%,.2f for the stock. \n", stockPurchase);
+        System.out.printf("Joe paid his broker a commission of $%,.2f on" + " the purchase. \n", purchaseComm);
+        System.out.printf("So, Joe paid a total of $%,.2f\n", amountPaid);
+        System.out.printf("Joe sold the stock for $%,.2f\n", stockSale);
+        System.out.printf("Joe paid his broker a commission of $%,.2f on" + " the sale. \n", sellingComm);
+        System.out.printf("So, Joe received a total of $%,.2f\n", ammountReceived);
+        System.out.printf("\nJoe's profit or loss: $%,.2f\n", profitOrLoss);
     }
+
+
 }
