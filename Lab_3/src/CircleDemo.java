@@ -5,30 +5,32 @@ public class CircleDemo {
     public static void main(String[] args) {
 
         Circle c = new Circle();
-        c.setRadius(187);
+        c.setRadius(30);
 
         System.out.println("Radius " + c.getRadius());
         System.out.println("Area " + c.getArea());
         System.out.println("Circumference " + c.getCircumference());
+        System.out.println("Diameter " + c.getDiameter());
     }
     public static class Circle {
         private double radius;
-        private double area;
-        private double Circumference;
 
-        public void setRadius(double r) {
+        private void setRadius(double r) {
             radius = r;
         }
 
-        public double getRadius() {
+        private double getRadius() {
             return radius;
         }
 
-        public double getArea() {
+        private double getArea() {
             return radius * radius * Math.PI;
         }
-        public double getCircumference() {
+        private double getCircumference() {
             return 2 * Math.PI * radius;
+        }
+        private double getDiameter() {
+            return radius * 2;
         }
     }
 }
