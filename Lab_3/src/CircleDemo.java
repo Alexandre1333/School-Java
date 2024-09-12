@@ -24,7 +24,7 @@ public class CircleDemo {
         }
 
         private double getArea() {
-            return radius * radius * Math.PI;
+            return Math.pow(radius,2) * Math.PI;
         }
         private double getCircumference() {
             return 2 * Math.PI * radius;
