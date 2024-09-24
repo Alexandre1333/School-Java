@@ -30,6 +30,20 @@ public class TestScores {
     }
 
     public double getAverage() {
-            return (test1 + test2 + test3) / 3;
+        return (test1 + test2 + test3) / 3;
+    }
+
+    public char getLetterGrade() {
+        if ( {
+            System.out.println("You get an A");
+        } else if (score.getAverage() >= 80) {
+            System.out.println("You get a B");
+        } else if (score.getAverage() >= 70) {
+            System.out.println("You get a C");
+        } else if (score.getAverage() >= 60) {
+            System.out.println("You get a D");
+        } else {
+            System.out.println("You get an F");
+        }
     }
 }
