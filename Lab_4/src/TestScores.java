@@ -3,7 +3,12 @@ public class TestScores {
     private double test1;
     private double test2;
     private double test3;
-    private double average;
+
+    public TestScores(double test1, double test2, double test3) {
+        this.test1 = test1;
+        this.test2 = test2;
+        this.test3 = test3;
+    }
 
     public double getTest1() {
         return test1;
@@ -34,16 +39,16 @@ public class TestScores {
     }
 
     public char getLetterGrade() {
-        if ( {
-            System.out.println("You get an A");
-        } else if (score.getAverage() >= 80) {
-            System.out.println("You get a B");
-        } else if (score.getAverage() >= 70) {
-            System.out.println("You get a C");
-        } else if (score.getAverage() >= 60) {
-            System.out.println("You get a D");
-        } else {
-            System.out.println("You get an F");
-        }
+        if (getAverage() >= 90) {
+            return 'A';
+        } else if (getAverage() >= 80) {
+        return 'B';
+    } else if (getAverage() >= 70) {
+        return 'C';
+    } else if (getAverage() >= 60) {
+        return 'D';
+    } else {
+        return 'F';
     }
+}
 }
