@@ -4,7 +4,7 @@ public class BankChargesDemo {
         Scanner scn = new Scanner(System.in);
         BankCharges bc = new BankCharges(0,0);
 
-        System.out.println("What is the account balence? ");
+        System.out.println("What is the account balance? ");
         bc.setBalance(scn.nextDouble());
 
         System.out.println("How many checks were written? ");
