@@ -4,8 +4,8 @@ public class InfiniteLoop {
         int n = 0;
         do{
             System.out.println("Hello");
-            n += 1;
-        }while(n < 5);
+            n = 1;
+        }while(n == 1);
         System.out.println("n value is: " + n);
 
         }
