@@ -4,10 +4,8 @@ public class B_Pattern {
         for(int i=6; i>= 1; i--) {
 
 
-            for (int s=1; s<= i; s++){
-
+            for (int p=1; p<= i; p++){
                 System.out.print("*");
-
             }
             System.out.println();
         }
