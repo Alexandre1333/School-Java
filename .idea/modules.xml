@@ -4,16 +4,17 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Java.iml" filepath="$PROJECT_DIR$/.idea/Java.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java Lab 1/Java Lab 1.iml" filepath="$PROJECT_DIR$/Java Lab 1/Java Lab 1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lab 1/Lab 1.iml" filepath="$PROJECT_DIR$/Lab 1/Lab 1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lab2/Lab2.iml" filepath="$PROJECT_DIR$/Lab2/Lab2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Lab_3/Lab_3.iml" filepath="$PROJECT_DIR$/Lab_3/Lab_3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Lab_4/Lab_4.iml" filepath="$PROJECT_DIR$/Lab_4/Lab_4.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Lab_5/Lab_5.iml" filepath="$PROJECT_DIR$/Lab_5/Lab_5.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Lab_6/Lab_6.iml" filepath="$PROJECT_DIR$/Lab_6/Lab_6.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Lab_7/Lab_7.iml" filepath="$PROJECT_DIR$/Lab_7/Lab_7.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Lab_8/Lab_8.iml" filepath="$PROJECT_DIR$/Lab_8/Lab_8.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Lab_9/Lab_9.iml" filepath="$PROJECT_DIR$/Lab_9/Lab_9.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Lab_IO/Lab_IO.iml" filepath="$PROJECT_DIR$/Lab_IO/Lab_IO.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Misc/Misc.iml" filepath="$PROJECT_DIR$/Misc/Misc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Archives/Semester 1/Lab_3/Lab_3.iml" filepath="$PROJECT_DIR$/Archives/Semester 1/Lab_3/Lab_3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Archives/Semester 1/Lab_4/Lab_4.iml" filepath="$PROJECT_DIR$/Archives/Semester 1/Lab_4/Lab_4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Archives/Semester 1/Lab_5/Lab_5.iml" filepath="$PROJECT_DIR$/Archives/Semester 1/Lab_5/Lab_5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Archives/Semester 1/Lab_6/Lab_6.iml" filepath="$PROJECT_DIR$/Archives/Semester 1/Lab_6/Lab_6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Archives/Semester 1/Lab_7/Lab_7.iml" filepath="$PROJECT_DIR$/Archives/Semester 1/Lab_7/Lab_7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Archives/Semester 1/Lab_8/Lab_8.iml" filepath="$PROJECT_DIR$/Archives/Semester 1/Lab_8/Lab_8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Archives/Semester 1/Lab_9/Lab_9.iml" filepath="$PROJECT_DIR$/Archives/Semester 1/Lab_9/Lab_9.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Archives/Semester 1/Lab_IO/Lab_IO.iml" filepath="$PROJECT_DIR$/Archives/Semester 1/Lab_IO/Lab_IO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Archives/Semester 1/Misc/Misc.iml" filepath="$PROJECT_DIR$/Archives/Semester 1/Misc/Misc.iml" />
       <module fileurl="file://$PROJECT_DIR$/Problems/Problems.iml" filepath="$PROJECT_DIR$/Problems/Problems.iml" />
     </modules>
   </component>
