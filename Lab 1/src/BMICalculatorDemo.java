@@ -1,9 +1,9 @@
 // Import Scanner library for user input
 import java.util.Scanner;
-public class BmiCalculatorDemo {
+public class BMICalculatorDemo {
     public static void main(String[] args) {
         // Create an instance of BmiCalculator class with values set to 0
-        BmiCalculator bmiCalc = new BmiCalculator(0, 0);
+        BMICalculator bmiCalc = new BMICalculator(0, 0);
         // Create scanner object for user input
         Scanner scn = new Scanner(System.in);
         // Variables to store mass and height inputs
@@ -33,13 +33,13 @@ public class BmiCalculatorDemo {
             // Determine BMI category based on calculated BMI value
             String recommendationPhrase;
             if (bmi <= 18.5) {
-                recommendationPhrase = "Underweight";
+                recommendationPhrase = "Possible nutritional deficiency and osteoporosis.";
             } else if (bmi > 18.5 && bmi <= 22.9) {
-                recommendationPhrase = "Normal";
+                recommendationPhrase = "Low risk (healthy range).";
             } else if (bmi >= 23.0 && bmi <= 27.4) {
-                recommendationPhrase = "Moderately Overweight";
+                recommendationPhrase = "Moderate risk of developing heart disease, high blood pressure, stroke, diabetes mellitus.";
             } else {
-                recommendationPhrase = "Obese";
+                recommendationPhrase = "High risk of developing heart disease, high blood pressure, stroke, diabetes mellitus. Metabolic syndrome.";
             }
             // Output BMI value and its corresponding category
             System.out.println("Based on your bmi of " + bmi + ", you are " + recommendationPhrase);
