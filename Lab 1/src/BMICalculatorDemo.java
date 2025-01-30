@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class BMICalculatorDemo {
     public static void main(String[] args) {
         // Create an instance of BmiCalculator class with values set to 0
-        BMICalculator bmiCalc = new BMICalculator(0, 0);
+        BMICalculator bmiCalc = new BMICalculator();
         // Create scanner object for user input
         Scanner scn = new Scanner(System.in);
         // Variables to store mass and height inputs

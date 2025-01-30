@@ -1,13 +1,9 @@
 import java.lang.Math;
+// Default Constructor
 class BMICalculator {
     private double mass;
     private double height;
 
-    // Constructor
-    public BMICalculator(double mass, double height) {
-        this.mass = mass;
-        this.height = height;
-    }
     // Getter method for mass
     public double getMass() {
         return mass;
