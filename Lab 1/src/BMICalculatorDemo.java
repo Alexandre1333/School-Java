@@ -7,8 +7,8 @@ public class BMICalculatorDemo {
         // Create scanner object for user input
         Scanner scn = new Scanner(System.in);
         // Variables to store mass and height inputs
-        double mass = 0;
-        double height = 0;
+        double mass;
+        double height;
         try {
             // Prompt user to input mass
             System.out.println("Enter Mass");
