@@ -1,6 +1,9 @@
 public abstract class GeometricShape {
     private String outlineColour;
-    private double area;
+
+    public GeometricShape(String outlineColour) {   // Constructor
+        this.outlineColour = outlineColour;
+    }
 
     public String getOutlineColour() {
         return outlineColour;
@@ -9,15 +12,11 @@ public abstract class GeometricShape {
     public void setOutlineColour(String outlineColour) {
         this.outlineColour = outlineColour;
     }
-
-    public void setArea(double area) {
-        this.area = area;
-    }
-
+    // Abstract method to calculate area
     public abstract double calcArea();
 
     @Override
     public String toString() {
-        return "Area " + area + "Outline Colour" + outlineColour;
+        return "Outline Colour: " + outlineColour;
     }
-    }
+}

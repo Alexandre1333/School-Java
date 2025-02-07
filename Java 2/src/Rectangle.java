@@ -2,6 +2,11 @@ public class Rectangle extends GeometricShape {
     private double height;
     private double width;
 
+    public Rectangle(String outlineColour, double height, double width) {
+        super(outlineColour);
+        this.height = height;
+        this.width = width;
+    }
     public double getWidth() {
         return width;
     }
@@ -30,7 +35,7 @@ public class Rectangle extends GeometricShape {
 
     @Override
     public String toString() {
-        return "Area" + calcArea() + "Outline Colour" + getOutlineColour();
+        return "Rectangle - " + super.toString() + ", Height: " + height + ", Width: " + width + ", Area: " + calcArea();
     }
 
 }
