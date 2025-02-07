@@ -1,4 +1,4 @@
-public class GeometricShape {
+public abstract class GeometricShape {
     private String outlineColour;
     private double area;
 
@@ -14,8 +14,10 @@ public class GeometricShape {
         this.area = area;
     }
 
-    public double calcArea() {
-        return this.area;
-    }
+    public abstract double calcArea();
 
-}
+    @Override
+    public String toString() {
+        return "Area " + area + "Outline Colour" + outlineColour;
+    }
+    }
