@@ -7,6 +7,7 @@ public class Rectangle extends GeometricShape {
         this.height = height;
         this.width = width;
     }
+
     public double getWidth() {
         return width;
     }
@@ -38,4 +39,18 @@ public class Rectangle extends GeometricShape {
         return "Rectangle - " + super.toString() + ", Height: " + height + ", Width: " + width + ", Area: " + calcArea();
     }
 
+    @Override
+    public boolean equals(Object comparedShape) {
+        if (this == comparedShape) {
+            return true;
+        }
+        if (!(comparedShape instanceof Rectangle)) {
+            return false;
+        }
+        Rectangle comparedRectangle = (Rectangle) comparedShape;
+        if (this.height == comparedRectangle.height && this.width == comparedRectangle.width) {
+            return true;
+        }
+        return false;
+    }
 }

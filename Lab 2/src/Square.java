@@ -1,38 +1,33 @@
 public class Square extends Rectangle {
     private double width;
     private double height;
-    private double widthAndHeight;
 
     public Square(String outlineColour, double height, double width) {
         super(outlineColour, height, width);
     }
 
-        @Override
-        public double getHeight () {
-            return height;
-        }
+    @Override
+    public double getHeight() {
+        return super.getHeight();
+    }
 
-        @Override
-        public void setHeight ( double height){
-            this.height = height;
-        }
+    @Override
+    public void setHeight(double height) {
+        super.setHeight(height);
+    }
 
-        @Override
-        public double getWidth() {
-            return width;
-        }
+    @Override
+    public double getWidth() {
+        return super.getWidth();
+    }
 
-        @Override
-        public void setWidth ( double width){
-            this.width = width;
-        }
+    @Override
+    public void setWidth(double width) {
+    }
 
-        public double getWidthAndHeight() {
-        return widthAndHeight;
-        }
+    @Override
+    public String toString() {
+        return "Square - " + "Outline Colour: " + getOutlineColour() + ", Height: " + getHeight() + ", Width: " + getWidth() + ", Area : " + super.calcArea();
 
-        public void setWidthAndHeight(double widthAndHeight){
-        this.widthAndHeight = widthAndHeight;
-        }
+    }
 }
-
