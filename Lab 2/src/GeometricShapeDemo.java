@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class GeometricShapeDemo {
@@ -43,16 +44,22 @@ public class GeometricShapeDemo {
                         shape.add(new Rectangle(colour, height, width));
                     }
                     case 3 -> {
+                        // Creating a new square
                         System.out.println("Enter outline colour: ");
                         String colour = scn.next();
                         System.out.println("Enter height or width:");
                         double widthOrHeight = scn.nextDouble();
                         shape.add(new Square(colour, widthOrHeight, widthOrHeight));
                     }
+                    case 4 ->  {
+
+                    }
                     case 5 -> {
                         System.out.println("All Shapes: ");
                         // for-each loop, prints each object in array
                         for (GeometricShape shapes : shape) System.out.println(shapes);
+                    }
+                    case 6 -> {
 
                     }
                     case 7 -> {
