@@ -27,7 +27,15 @@ public class Square extends Rectangle {
 
     @Override
     public String toString() {
-        return "Square - " + "Outline Colour: " + getOutlineColour() + ", Height: " + getHeight() + ", Width: " + getWidth() + ", Area : " + super.calcArea();
+        return "Square - " + "Outline Colour: " + getOutlineColour() + ", Height: " + getHeight() + ", Width: " + getWidth();
 
+    }
+    // makes sure object is both squares, compares height, width and the outline colour
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof Square)) return false;
+        Square other = (Square) obj;
+        return Double.compare(width, other.getWidth()) == 0 && Double.compare(height, other.getHeight()) == 0 && getOutlineColour().equals(other.getOutlineColour());
     }
 }

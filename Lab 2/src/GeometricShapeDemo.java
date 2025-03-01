@@ -1,4 +1,3 @@
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class GeometricShapeDemo {
@@ -29,7 +28,7 @@ public class GeometricShapeDemo {
                         String colour = scn.next();
                         System.out.println("Enter radius: ");
                         double radius = scn.nextDouble();
-                        // adds the values entered by user to create a new circle in the array
+                        // Adds the values entered by user to create a new circle in the array
                         shape.add(new Circle(colour, radius));
                     }
                     case 2 -> {
@@ -40,9 +39,14 @@ public class GeometricShapeDemo {
                         double height = scn.nextDouble();
                         System.out.println("Enter width: ");
                         double width = scn.nextDouble();
-                        // adds the values entered by user to create a new rectangle array
-                        shape.add(new Rectangle(colour, height, width));
-                    }
+                        // Makes sure user does not add same width and height for rectangle as it is not a square.
+                        if (width == height) {
+                            System.out.println("Width and height cannot be the same values for a rectangle");
+                        }
+                      else {
+                            shape.add(new Rectangle(colour, height, width));
+                        }
+                      }
                     case 3 -> {
                         // Creating a new square
                         System.out.println("Enter outline colour: ");
@@ -52,15 +56,35 @@ public class GeometricShapeDemo {
                         shape.add(new Square(colour, widthOrHeight, widthOrHeight));
                     }
                     case 4 ->  {
-
-                    }
+                        // If there is not enough objects to compare, bring user back to menu
+                        if (shape.size() < 2) {
+                            System.out.println("Not enough objects to compare.");
+                            break;
+                        }
+                            // Prompts user to enter 2 indexes to compare, shown in case 5
+                            System.out.println("Enter first object index #: ");
+                            int first = scn.nextInt();
+                            System.out.println("Enter second object index #: ");
+                            int second = scn.nextInt();
+                            // Error checking, make sure user does not select index that is out of bounds
+                            if (first >= 0 && first < shape.size() && second >= 0 && second < shape.size()) {
+                                System.out.println(shape.get(first).equals(shape.get(second)) ? "Objects are equal." : "Objects are different.");
+                            } else {
+                                System.out.println("Invalid index.");
+                            }
+                        }
                     case 5 -> {
+                        // Lists out all objects created, prints index number. Useful for comparison part.
                         System.out.println("All Shapes: ");
-                        // for-each loop, prints each object in array
-                        for (GeometricShape shapes : shape) System.out.println(shapes);
+                        for (int i = 0; i < shape.size(); i++) {
+                            System.out.println("Index " + i + ": " + shape.get(i));
+                        }
                     }
                     case 6 -> {
-
+                        // Prints out all objects and their area
+                        for (GeometricShape shapes : shape) {
+                            System.out.println(shapes + ", Area: " + shapes.calcArea());
+                        }
                     }
                     case 7 -> {
                         System.out.println("Exiting...");

@@ -36,21 +36,14 @@ public class Rectangle extends GeometricShape {
 
     @Override
     public String toString() {
-        return "Rectangle - " + super.toString() + ", Height: " + height + ", Width: " + width + ", Area: " + calcArea();
+        return "Rectangle - " + super.toString() + ", Height: " + height + ", Width: " + width;
     }
-
+    // makes sure object is both rectangles, compares height, width and the outline colour
     @Override
-    public boolean equals(Object comparedShape) {
-        if (this == comparedShape) {
-            return true;
-        }
-        if (!(comparedShape instanceof Rectangle)) {
-            return false;
-        }
-        Rectangle comparedRectangle = (Rectangle) comparedShape;
-        if (this.height == comparedRectangle.height && this.width == comparedRectangle.width) {
-            return true;
-        }
-        return false;
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof Rectangle)) return false;
+        Rectangle other = (Rectangle) obj;
+        return Double.compare(width, other.width) == 0 && Double.compare(height, other.height) == 0 && getOutlineColour().equals(other.getOutlineColour());
     }
 }

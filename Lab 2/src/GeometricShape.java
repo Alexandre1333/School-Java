@@ -20,18 +20,4 @@ public abstract class GeometricShape {
     public String toString() {
         return "Outline Colour: " + outlineColour;
     }
-
-    public boolean equals(Object comparedShape) {
-        if (this == comparedShape) {
-            return true;
-        }
-        if (!(comparedShape instanceof GeometricShape)) {
-            return false;
-        }
-        GeometricShape comparedGeometricShape = (GeometricShape) comparedShape;
-        if (this.outlineColour.equals(comparedGeometricShape.outlineColour)) {
-            return true;
-        }
-        return false;
-    }
 }
