@@ -86,17 +86,15 @@ public class GeometricShapeDemo {
                             System.out.println(shapes + ", Area: " + shapes.calcArea());
                         }
                     }
-                    case 7 -> {
-                        System.out.println("Exiting...");
-                    }
+                    case 7 -> {}
+                    case 8 -> {}
+                    case 9 -> {}
+                    case 10 -> System.out.println("Exiting...");
                     // Will show menu option again if user types incorrect menu option
-                    default -> {
-                        System.out.println("Invalid choice. Please choose again.");
-                    }
-
+                    default -> System.out.println("Invalid choice. Please choose again.");
                 }
                 // checks when 7 is entered as choice, if so, exit program
-            } while (userChoice != 7);
+            } while (userChoice != 10);
             // error checking for when user enters a non-numerical value or incorrect string
         } catch (Exception e) {
             System.out.println("Please enter a correct numerical value or string");

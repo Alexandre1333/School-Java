@@ -20,4 +20,10 @@ public abstract class GeometricShape {
     public String toString() {
         return "Outline Colour: " + outlineColour;
     }
+
+
+    interface Drawable {
+        void Draw();
+        final double PI = 3.41;
+    }
 }
