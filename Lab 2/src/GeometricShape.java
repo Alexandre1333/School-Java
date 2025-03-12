@@ -1,8 +1,19 @@
-public abstract class GeometricShape {
+import java.util.Date;
+public abstract class GeometricShape implements Drawable, Cloneable {
     private String outlineColour;
+    private Date creationDate;
 
     public GeometricShape(String outlineColour) {   // Constructor
         this.outlineColour = outlineColour;
+        this.creationDate = new Date();
+    }
+
+    public Date getCreationDate() {
+        return (Date) creationDate.clone();
+    }
+
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = (Date) creationDate.clone();
     }
 
     public String getOutlineColour() {
@@ -18,12 +29,18 @@ public abstract class GeometricShape {
 
     @Override
     public String toString() {
-        return "Outline Colour: " + outlineColour;
+        return "Outline Colour: " + outlineColour + ", Creation Date: " + creationDate;
     }
 
-
-    interface Drawable {
-        void Draw();
-        final double PI = 3.41;
+    @Override
+    public GeometricShape clone() throws CloneNotSupportedException {
+        try {
+            GeometricShape cloned = (GeometricShape) super.clone();
+            cloned.creationDate = new Date(); //
+            return cloned;
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
     }
 }
+

@@ -1,4 +1,3 @@
-import java.util.Date;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class GeometricShapeDemo {
@@ -19,12 +18,7 @@ public class GeometricShapeDemo {
                 System.out.println("4: Compare two objects");
                 System.out.println("5: Display all objects");
                 System.out.println("6: Display all objects and corresponding areas");
-                System.out.println("7: Clone an object");
-                System.out.println("8: Set Creation Date");
-                System.out.println("9: Draw all shapes");
-                System.out.println("10: Exit");
-
-
+                System.out.println("7: Exit");
                 userChoice = scn.nextInt();
                 switch (userChoice) {
                     // Each case represents the proper menu option and its function
@@ -48,10 +42,11 @@ public class GeometricShapeDemo {
                         // Makes sure user does not add same width and height for rectangle as it is not a square.
                         if (width == height) {
                             System.out.println("Width and height cannot be the same values for a rectangle");
-                        } else {
+                        }
+                      else {
                             shape.add(new Rectangle(colour, height, width));
                         }
-                    }
+                      }
                     case 3 -> {
                         // Creating a new square
                         System.out.println("Enter outline colour: ");
@@ -60,24 +55,25 @@ public class GeometricShapeDemo {
                         double widthOrHeight = scn.nextDouble();
                         shape.add(new Square(colour, widthOrHeight, widthOrHeight));
                     }
-                    case 4 -> {
+                    case 4 ->  {
                         // If there is not enough objects to compare, bring user back to menu
                         if (shape.size() < 2) {
                             System.out.println("Not enough objects to compare.");
                             break;
                         }
-                        // Prompts user to enter 2 indexes to compare, shown in case 5
-                        System.out.println("Enter first object index #: ");
-                        int first = scn.nextInt();
-                        System.out.println("Enter second object index #: ");
-                        int second = scn.nextInt();
-                        // Error checking, make sure user does not select index that is out of bounds
-                        if (first >= 0 && first < shape.size() && second >= 0 && second < shape.size()) {
-                            System.out.println(shape.get(first).equals(shape.get(second)) ? "Objects are equal." : "Objects are different.");
-                        } else {
-                            System.out.println("Invalid index.");
+                            // Prompts user to enter 2 indexes to compare, shown in case 5
+                            System.out.println("Enter first object index #: ");
+                            int first = scn.nextInt();
+                            System.out.println("Enter second object index #: ");
+                            int second = scn.nextInt();
+                            // Error checking, make sure user does not select index that is out of bounds
+                            if (first >= 0 && first < shape.size() && second >= 0 && second < shape.size()) {
+                                // Ternary operator for comparing objects
+                                System.out.println(shape.get(first).equals(shape.get(second)) ? "Objects are equal." : "Objects are different.");
+                            } else {
+                                System.out.println("Invalid index.");
+                            }
                         }
-                    }
                     case 5 -> {
                         // Lists out all objects created, prints index number. Useful for comparison part.
                         System.out.println("All Shapes: ");
@@ -92,40 +88,16 @@ public class GeometricShapeDemo {
                         }
                     }
                     case 7 -> {
-                        /** Makes sure that user enters a proper index number and thats its properly in bounds.
-                            Tells the user whether the clone has failed or have entered a improper index #    */
-                        System.out.println("Enter the index of the shape to clone: ");
-                        int index = scn.nextInt();
-                        if (index >= 0 && index < shape.size()) {
-                            GeometricShape cloned = shape.get(index).clone();
-                            if (cloned != null) {
-                                shape.add(cloned);
-                                System.out.println("Shape cloned successfully.");
-                            }
-                        } else System.out.println("Please enter a valid index number");
-                    }
-                    case 8 -> {
-                        System.out.println("Enter the index of the shape to update the creation date: ");
-                        int index = scn.nextInt();
-                        if (index >= 0 && index < shape.size()) {
-                            shape.get(index).setCreationDate(new Date());
-                            System.out.println("Creation date updated.");
-                        }
-                    }
-                    case 9 -> {
-                        for (GeometricShape shapes : shape)
-                            shapes.Draw();
-                    }
-                    case 10 -> {
                         System.out.println("Exiting...");
                     }
                     // Will show menu option again if user types incorrect menu option
                     default -> {
                         System.out.println("Invalid choice. Please choose again.");
                     }
+
                 }
                 // checks when 7 is entered as choice, if so, exit program
-            } while (userChoice != 10);
+            } while (userChoice != 7);
             // error checking for when user enters a non-numerical value or incorrect string
         } catch (Exception e) {
             System.out.println("Please enter a correct numerical value or string");

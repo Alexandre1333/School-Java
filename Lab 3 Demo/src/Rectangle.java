@@ -1,4 +1,4 @@
-public class Rectangle extends GeometricShape implements Drawable, Cloneable {
+public class Rectangle extends GeometricShape {
     private double height;
     private double width;
 
@@ -38,7 +38,7 @@ public class Rectangle extends GeometricShape implements Drawable, Cloneable {
     public String toString() {
         return "Rectangle - " + super.toString() + ", Height: " + height + ", Width: " + width;
     }
-
+    // makes sure object is both rectangles, compares height, width and the outline colour
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -46,23 +46,4 @@ public class Rectangle extends GeometricShape implements Drawable, Cloneable {
         Rectangle other = (Rectangle) obj;
         return Double.compare(width, other.width) == 0 && Double.compare(height, other.height) == 0 && getOutlineColour().equals(other.getOutlineColour());
     }
-
-    @Override
-    public void Draw() {
-        System.out.println("i am a rectangle and that's pretty much it");
-        final double PI = 3.14;
-    }
-
-    @Override
-    public Rectangle clone() {
-        try {
-            Rectangle cloned = (Rectangle) super.clone();
-            cloned.width = this.width;
-            cloned.height = this.height;
-            return cloned;
-        } catch (CloneNotSupportedException e) {
-            throw new AssertionError();
-        }
-    }
 }
-

@@ -1,5 +1,5 @@
 import java.lang.Math;
-public class Circle extends GeometricShape implements Drawable, Cloneable {
+public class Circle extends GeometricShape {
     private double radius;
 
     public Circle(String outlineColor, double radius) {
@@ -33,7 +33,7 @@ public class Circle extends GeometricShape implements Drawable, Cloneable {
     public String toString() {
         return "Circle - " + super.toString() + ", Radius: " + radius + ", Perimeter: " + calcPerimeter();
     }
-
+    // makes sure object is both circles, compares radius and outline colour
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -41,22 +41,4 @@ public class Circle extends GeometricShape implements Drawable, Cloneable {
         Circle other = (Circle) obj;
         return Double.compare(radius, other.radius) == 0 && getOutlineColour().equals(other.getOutlineColour());
     }
-
-    @Override
-    public void Draw() {
-        System.out.println("i am a circle and i am round");
-        final double PI = 3.14;
-    }
-
-    @Override
-    public Circle clone() {
-        try {
-            Circle cloned = (Circle) super.clone();
-            cloned.radius = this.radius;
-            return cloned;
-        } catch (CloneNotSupportedException e) {
-            throw new AssertionError();
-        }
-    }
 }
-

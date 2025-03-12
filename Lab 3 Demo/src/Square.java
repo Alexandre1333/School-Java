@@ -27,16 +27,9 @@ public class Square extends Rectangle {
 
     @Override
     public String toString() {
-        return "Square - " + "Outline Colour: " + getOutlineColour() + ", Creation Date" + getCreationDate() + ", Height: " + getHeight() + ", Width: " + getWidth();
+        return "Square - " + "Outline Colour: " + getOutlineColour() + ", Height: " + getHeight() + ", Width: " + getWidth();
 
     }
-
-    @Override
-    public void Draw() {
-        System.out.println("i am a square and all my sides are equal");
-        final double PI = 3.14;
-    }
-
     // makes sure object is both squares, compares height, width and the outline colour
     @Override
     public boolean equals(Object obj) {
@@ -44,15 +37,5 @@ public class Square extends Rectangle {
         if (!(obj instanceof Square)) return false;
         Square other = (Square) obj;
         return Double.compare(width, other.getWidth()) == 0 && Double.compare(height, other.getHeight()) == 0 && getOutlineColour().equals(other.getOutlineColour());
-    }
-
-    @Override
-    public Square clone() {
-        try {
-            Square clone = (Square) super.clone();
-            return clone;
-        } catch (CloneNotSupportedException e) {
-        throw new AssertionError();
-        }
     }
 }
