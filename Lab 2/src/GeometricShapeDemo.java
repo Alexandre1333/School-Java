@@ -24,7 +24,6 @@ public class GeometricShapeDemo {
                 System.out.println("9: Draw all shapes");
                 System.out.println("10: Exit");
 
-
                 userChoice = scn.nextInt();
                 switch (userChoice) {
                     // Each case represents the proper menu option and its function
@@ -73,8 +72,17 @@ public class GeometricShapeDemo {
                         int second = scn.nextInt();
                         // Error checking, make sure user does not select index that is out of bounds
                         if (first >= 0 && first < shape.size() && second >= 0 && second < shape.size()) {
-                            System.out.println(shape.get(first).equals(shape.get(second)) ? "Objects are equal." : "Objects are different.");
-                        } else {
+                            Object obj1 = shape.get(first);
+                            Object obj2 = shape.get(second);
+                            // Making sure objects selected are both from the same class before comparing
+                            if (obj1.getClass().equals(obj2.getClass())) {
+                                // Comparison method
+                                System.out.println(obj1.equals(obj2) ? "Objects are equal." : "Objects are different.");
+                            } else {
+                                System.out.println("Cannot compare objects of different types");
+                            }
+                        }
+                        else {
                             System.out.println("Invalid index.");
                         }
                     }
@@ -92,8 +100,8 @@ public class GeometricShapeDemo {
                         }
                     }
                     case 7 -> {
-                        /** Makes sure that user enters a proper index number and thats its properly in bounds.
-                            Tells the user whether the clone has failed or have entered a improper index #    */
+                        /** Makes sure that user enters a proper index number and that its properly in bounds.
+                            Tells the user whether the clone has failed or has entered an improper index # */
                         System.out.println("Enter the index of the shape to clone: ");
                         int index = scn.nextInt();
                         if (index >= 0 && index < shape.size()) {
@@ -116,15 +124,11 @@ public class GeometricShapeDemo {
                         for (GeometricShape shapes : shape)
                             shapes.Draw();
                     }
-                    case 10 -> {
-                        System.out.println("Exiting...");
-                    }
+                    case 10 -> System.out.println("Exiting...");
                     // Will show menu option again if user types incorrect menu option
-                    default -> {
-                        System.out.println("Invalid choice. Please choose again.");
-                    }
+                    default -> System.out.println("Invalid choice. Please choose again.");
                 }
-                // checks when 7 is entered as choice, if so, exit program
+                // checks when 10 is entered as choice, if so, exit program
             } while (userChoice != 10);
             // error checking for when user enters a non-numerical value or incorrect string
         } catch (Exception e) {

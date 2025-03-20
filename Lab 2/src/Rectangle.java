@@ -54,7 +54,7 @@ public class Rectangle extends GeometricShape implements Drawable, Cloneable {
     }
 
     @Override
-    public Rectangle clone() {
+    public Rectangle clone() throws CloneNotSupportedException{
         try {
             Rectangle cloned = (Rectangle) super.clone();
             cloned.width = this.width;
