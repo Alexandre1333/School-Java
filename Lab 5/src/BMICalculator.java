@@ -1,31 +1,46 @@
-import java.lang.Math;
-// Default Constructor
-class BMICalculator {
-    private double mass;
+public class BMICalculator {
     private double height;
+    private double weight;
 
-    // Getter method for mass
-    public double getMass() {
-        return mass;
+    public BMICalculator() {
+        this.height = 0;
+        this.weight = 0;
     }
-    // Setter method for mass
-    public void setMass(double mass) {
-        this.mass = mass;
-    }
-    // Getter method for height
-    public double getHeight() {
-        return height;
-    }
-    // Setter method for height
-    public void setHeight(double height) {
+
+    public void setHeight(double height) throws HeightOutOfRangeException {
+        if (height < 0.2 || height > 2.2) {
+            throw new HeightOutOfRangeException("Height must be between 0.2 and 2.2 meters.");
+        }
         this.height = height;
     }
-    // Method to calculate BMI. Dividing mass by height ^2
-    public double calculateBmi() {
-        return mass / Math.pow(height, 2);
+
+    public void setWeight(double weight) throws WeightOutOfRangeException {
+        if (weight < 10 || weight > 300) {
+            throw new WeightOutOfRangeException("Weight must be between 10 and 300 kg.");
+        }
+        this.weight = weight;
     }
 
-    public void returnSingaporeanBMIMeaning() {
+    public String returnSingaporeanBMIMeaning() throws NoBMIException {
+        if (height == 0 || weight == 0) {
+            throw new NoBMIException("Height or weight not properly set. Cannot calculate BMI.");
+        }
+        double bmi = weight / Math.pow(height, 2);
+        if (bmi <= 18.5) {
+            return "Possible nutritional deficiency and osteoporosis.";
+        } else if (bmi > 18.5 && bmi <= 22.9) {
+            return "Low risk (healthy range).";
+        } else if (bmi >= 23.0 && bmi <= 27.4) {
+            return "Moderate risk of developing heart disease, high blood pressure, stroke, diabetes mellitus.";
+        } else {
+            return "High risk of developing heart disease, high blood pressure, stroke, diabetes mellitus. Metabolic syndrome.";
+        }
     }
 
+    public double getBMI() throws NoBMIException {
+        if (height == 0 || weight == 0) {
+            throw new NoBMIException("Height or weight not properly set. Cannot calculate BMI.");
+        }
+        return weight / Math.pow(height, 2);
+    }
 }
